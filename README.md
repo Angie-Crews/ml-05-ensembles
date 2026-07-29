@@ -48,6 +48,7 @@ See [docs/your-files.md] for more.
 Links:
 
 - [ml_05_case.ipynb](notebooks/ml_05_case.ipynb)
+- [ml_05_ensembles_crews.ipynb (custom executed notebook)](notebooks/ml_05_ensembles_crews.ipynb)
 
 ## Working Files
 
