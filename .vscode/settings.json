@@ -39,5 +39,6 @@
       ".github/workflows/*.yml",
       ".github/workflows/*.yaml"
     ]
-  }
+  },
+  "notebook.output.fontSize": 16
 }
