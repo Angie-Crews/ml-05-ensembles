@@ -616,3 +616,80 @@ Name: count, dtype: int64
 2026-07-29 18:27:01 | INFO | M05 | Dataset: penguins   Target: species (classification)
 2026-07-29 18:27:01 | INFO | M05 | Compared: single tree vs. random forest vs. gradient boosting
 2026-07-29 18:27:01 | INFO | M05 | ========================
+2026-07-29 18:37:57 | INFO | M05 | === RUN START ===
+2026-07-29 18:37:57 | INFO | M05 | project=M05
+2026-07-29 18:37:57 | INFO | M05 | repo_dir=ml-05-ensembles
+2026-07-29 18:37:57 | INFO | M05 | python=3.14.3
+2026-07-29 18:37:57 | INFO | M05 | os=Windows 11
+2026-07-29 18:37:57 | INFO | M05 | shell=powershell
+2026-07-29 18:37:57 | INFO | M05 | cwd=notebooks
+2026-07-29 18:37:57 | INFO | M05 | github_actions=False
+2026-07-29 18:37:57 | INFO | M05 | Confirming installation:
+2026-07-29 18:37:57 | INFO | M05 |   python:       3.14.3
+2026-07-29 18:37:57 | INFO | M05 |   pandas:       3.0.5
+2026-07-29 18:37:57 | INFO | M05 |   numpy:        2.5.1
+2026-07-29 18:37:57 | INFO | M05 |   scikit-learn: 1.9.0
+2026-07-29 18:37:57 | INFO | M05 |   seaborn:      0.13.2
+2026-07-29 18:37:57 | INFO | M05 |   matplotlib:   3.11.1
+2026-07-29 18:37:57 | INFO | M05 | Loading dataset: penguins
+2026-07-29 18:37:57 | INFO | M05 | Loaded: 344 rows (instances), 7 columns
+2026-07-29 18:37:57 | INFO | M05 | Original rows: 344
+2026-07-29 18:37:57 | INFO | M05 | Model rows:    333
+2026-07-29 18:37:57 | INFO | M05 | Classes in target 'sex': ['Female', 'Male']
+2026-07-29 18:37:57 | DEBUG | M05 | Class counts:
+sex
+Male      168
+Female    165
+Name: count, dtype: int64
+2026-07-29 18:37:57 | INFO | M05 | Train instances: 266
+2026-07-29 18:37:57 | INFO | M05 | Test instances: 67
+2026-07-29 18:37:57 | INFO | M05 | Fitting single tree + two ensembles
+2026-07-29 18:37:57 | DEBUG | M05 |   fitted: single_tree
+2026-07-29 18:37:58 | DEBUG | M05 |   fitted: random_forest
+2026-07-29 18:37:58 | DEBUG | M05 |   fitted: gradient_boosting
+2026-07-29 18:37:58 | INFO | M05 | Best model: random_forest with test accuracy = 0.896
+2026-07-29 18:37:58 | INFO | M05 | Lower gap values suggest better generalization from train to test.
+2026-07-29 18:38:05 | INFO | M05 | Cross-validation complete for top models from Section 5.
+2026-07-29 18:38:09 | INFO | M05 | Best tuned RF: rf_100_depth_6
+2026-07-29 18:38:09 | INFO | M05 | Best Phase 5 model by holdout metrics: rf_100_depth_6
+2026-07-29 18:38:09 | INFO | M05 | Random forest feature importances (high to low):
+2026-07-29 18:38:09 | INFO | M05 |   bill_depth_mm        0.356
+2026-07-29 18:38:09 | INFO | M05 |   body_mass_g          0.325
+2026-07-29 18:38:09 | INFO | M05 |   bill_length_mm       0.203
+2026-07-29 18:38:09 | INFO | M05 |   flipper_length_mm    0.116
+2026-07-29 18:39:55 | INFO | M05 | === RUN START ===
+2026-07-29 18:39:55 | INFO | M05 | project=M05
+2026-07-29 18:39:55 | INFO | M05 | repo_dir=ml-05-ensembles
+2026-07-29 18:39:55 | INFO | M05 | python=3.14.3
+2026-07-29 18:39:55 | INFO | M05 | os=Windows 11
+2026-07-29 18:39:55 | INFO | M05 | shell=powershell
+2026-07-29 18:39:55 | INFO | M05 | cwd=notebooks
+2026-07-29 18:39:55 | INFO | M05 | github_actions=False
+2026-07-29 18:39:55 | INFO | M05 | Confirming installation:
+2026-07-29 18:39:55 | INFO | M05 |   python:       3.14.3
+2026-07-29 18:39:55 | INFO | M05 |   pandas:       3.0.5
+2026-07-29 18:39:55 | INFO | M05 |   numpy:        2.5.1
+2026-07-29 18:39:55 | INFO | M05 |   scikit-learn: 1.9.0
+2026-07-29 18:39:55 | INFO | M05 |   seaborn:      0.13.2
+2026-07-29 18:39:55 | INFO | M05 |   matplotlib:   3.11.1
+2026-07-29 18:39:55 | INFO | M05 | Loading dataset: penguins
+2026-07-29 18:39:55 | INFO | M05 | Loaded: 344 rows (instances), 7 columns
+2026-07-29 18:39:55 | INFO | M05 | Original rows: 344
+2026-07-29 18:39:55 | INFO | M05 | Model rows:    333
+2026-07-29 18:39:55 | INFO | M05 | Classes in target 'sex': ['Female', 'Male']
+2026-07-29 18:39:55 | DEBUG | M05 | Class counts:
+sex
+Male      168
+Female    165
+Name: count, dtype: int64
+2026-07-29 18:39:55 | INFO | M05 | Train instances: 266
+2026-07-29 18:39:55 | INFO | M05 | Test instances: 67
+2026-07-29 18:39:55 | INFO | M05 | Fitting single tree + two ensembles
+2026-07-29 18:39:55 | DEBUG | M05 |   fitted: single_tree
+2026-07-29 18:39:55 | DEBUG | M05 |   fitted: random_forest
+2026-07-29 18:39:55 | DEBUG | M05 |   fitted: gradient_boosting
+2026-07-29 18:39:59 | INFO | M05 | Best model: random_forest with test accuracy = 0.896
+2026-07-29 18:39:59 | INFO | M05 | Lower gap values suggest better generalization from train to test.
+2026-07-29 18:40:01 | INFO | M05 | Cross-validation complete for top models from Section 5.
+2026-07-29 18:40:05 | INFO | M05 | Best tuned RF: rf_100_depth_6
+2026-07-29 18:40:05 | INFO | M05 | Best Phase 5 model by holdout metrics: rf_100_depth_6
