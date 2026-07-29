@@ -21,19 +21,36 @@ to get the example projects running on your machine.
 
 ## Phase 4. Technical Modification
 
-Describe your small technical modification to the example project.
+I added a structured model-comparison workflow to
+[ml_05_ensembles_crews.ipynb](../notebooks/ml_05_ensembles_crews.ipynb) so results are more defensible than a single accuracy value.
 
-Include:
+What I changed:
 
-- What you changed
-- Why you chose that change
-- How you verified that it worked
-- What result, output, chart, metric, or behavior confirmed the change
+- Added a reusable evaluation function for each model.
+- Reported train/test weighted precision, recall, and F1 in addition to accuracy.
+- Added overfitting checks with train-test gap metrics for accuracy and weighted F1.
+- Built a sorted leaderboard table and chart to compare models consistently.
+- Added stratified 5-fold cross-validation for the top two models from the holdout leaderboard.
 
-Compared with the example project,
-explain what is different and why the change matters.
+Why I chose this change:
 
-Was it easy, or surprisingly challenging and why do you think so?
+- Accuracy by itself can hide unstable behavior.
+- Gap metrics help identify overfitting risk.
+- Cross-validation gives a more reliable estimate than one split.
+
+How I verified it worked:
+
+- Executed the notebook cells end-to-end and confirmed successful model training, leaderboard display, chart rendering, and CV summary output.
+- Confirmed that metrics were computed for all three models on the same split.
+
+Evidence and result:
+
+- Holdout split ranking: random forest was highest on test accuracy in this run.
+- Cross-validation ranking (top two models): gradient boosting and random forest were nearly tied, with gradient boosting slightly higher in mean CV metrics.
+- Gap metrics were small, indicating limited overfitting under the current setup.
+
+Compared with the original example,
+this modification adds stronger evaluation evidence and makes model choice easier to justify in writing.
 
 ## Phase 5. Custom Project
 
