@@ -54,69 +54,103 @@ this modification adds stronger evaluation evidence and makes model choice easie
 
 ## Phase 5. Custom Project
 
-Describe your custom project and how you made your modeling decisions.
+For Phase 5, I applied the ensemble workflow to a harder target in the same
+dataset and added stronger diagnostics to support model choice.
 
-Be specific about what changed from the example project.
+Notebook used:
+
+- [ml_05_ensembles_crews.ipynb](../notebooks/ml_05_ensembles_crews.ipynb)
 
 ### Basis and Data
 
-Describe the dataset, input, or example you started with.
-
-Include:
-
-- The original example dataset or input
-- The data source
-- Why you chose it, kept it, or changed it
-- Any important limitations or assumptions
+- Original dataset: Seaborn penguins dataset.
+- Source: loaded directly with seaborn as a built-in educational dataset.
+- Why kept: it allows a clean comparison to earlier phases while changing only
+	the target and model strategy.
+- Limitations: small dataset size and some missing values, which required
+	dropping rows with missing values in target/features.
 
 ### Modeling Approach
 
-Describe the problem type and modeling approach for this project.
-
-Include:
-
-- Is this supervised or unsupervised and how do you know
-- Is this classification, regression, clustering, recommendation, forecasting, or another type of ML task
-- What kind of target works well for this approach
-- Why your selected model or method is appropriate
+- Supervised learning: the target variable is known during training.
+- Task type: binary classification.
+- Target type: categorical class label.
+- Models used: decision tree baseline, gradient boosting, and tuned random
+	forest.
+- Why appropriate: ensembles are well suited for nonlinear feature
+	interactions and often improve predictive performance over a single tree.
 
 ### Target
 
-Describe the example target variable.
-
-Then describe your chosen target variable.
-
-Explain how your target choice changes the modeling approach, interpretation, or evaluation.
+- Example target from earlier work: species (multi-class).
+- Phase 5 target: sex (binary, Female or Male).
+- Why this change matters: binary classification enables threshold-based
+	diagnostics (ROC and Precision-Recall curves) and changes class-level error
+	interpretation.
 
 ### Features
 
-Describe the example features.
-
-Then describe the features you used to predict your target.
-
-Explain what you changed, added, removed, or kept and why.
+- Features used: bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g.
+- I kept the same feature set to isolate the effect of target change and model
+	tuning.
+- This makes the Phase 5 comparison more defensible because only the target and
+	modeling strategy changed.
 
 ### Evaluation and Results
 
-Describe how you evaluated your model.
-
-Include:
-
-- The metric or evidence you used
-- The main result
-- Whether the result was useful, interesting, surprising, or disappointing
-- Any weakness, limitation, or next improvement
+- Evidence used:
+	- holdout test metrics (accuracy, weighted precision/recall/F1)
+	- train-test gap metrics for overfitting checks
+	- stratified 5-fold cross-validation means and standard deviations
+	- random forest tuning heatmap
+	- confusion matrix for best model
+	- ROC AUC and Average Precision tables/curves
+- Main holdout result:
+	- random_forest test accuracy 0.8955
+	- gradient_boosting test accuracy 0.8806
+	- single_tree test accuracy 0.8358
+- Best tuned model:
+	- rf_100_depth_6 (top holdout score with improved gap behavior)
+- Cross-validation result:
+	- rf_100_depth_6 cv accuracy mean 0.8953 (std 0.0514)
+	- gradient_boosting cv accuracy mean 0.8952 (std 0.0523)
+	- single_tree cv accuracy mean 0.8891 (std 0.0520)
+- Threshold-based diagnostics:
+	- ROC AUC: rf_100_depth_6 = 0.9323, gradient_boosting = 0.9251,
+		single_tree = 0.8324
+	- Average Precision: gradient_boosting = 0.9298,
+		rf_100_depth_6 = 0.9240, single_tree = 0.7788
+- Confusion matrix (rf_100_depth_6 on test set):
+	- Female correctly classified: 28 of 33
+	- Male correctly classified: 32 of 34
+- Interpretation:
+	- ensembles clearly outperformed the single tree on this harder target.
+	- tuned random forest is the best overall production candidate for this run.
+	- gradient boosting is very competitive and slightly stronger on average
+		precision.
 
 ### Summary
 
-Summarize your custom project.
+I completed Phase 5 by changing to a harder binary target, running a tuning
+experiment, and validating model behavior with both split-based and
+threshold-based diagnostics.
 
-Include:
+What I learned:
 
-- How you implemented your custom model
-- What results you got
-- What you learned
-- How well you exercised the skills covered in this project
-- What kinds of real problems you could apply these skills to in the future
+- model rankings can shift depending on metric choice (accuracy vs AP)
+- small parameter changes can reduce overfitting without hurting accuracy
+- ROC/PR curves add useful context that single-point metrics cannot provide
 
-Display at least one image or screenshot showing your work.
+Skills demonstrated:
+
+- end-to-end model comparison
+- hyperparameter tuning
+- cross-validation
+- confusion-matrix analysis
+- ROC/PR analysis and interpretation
+
+This workflow applies directly to real binary classification problems where
+tradeoffs between error types and model stability matter.
+
+Include at least one screenshot from the Phase 5 outputs in your docs/images
+folder and reference it here for submission.
