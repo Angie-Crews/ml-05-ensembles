@@ -17,6 +17,28 @@ We learn to:
 - read feature importance scores
 - tune key hyperparameters
 
+## Phase 4 Technical Modification Summary
+
+For Phase 4, I strengthened model evaluation in
+[ml_05_ensembles_crews.ipynb](notebooks/ml_05_ensembles_crews.ipynb)
+by adding:
+
+- weighted precision, recall, and F1 (train and test)
+- train-test gap metrics to check generalization
+- a sorted leaderboard to compare models consistently
+- stratified 5-fold cross-validation for top models
+
+### Why this matters
+
+This provides stronger evidence than accuracy alone and helps justify model
+selection with both holdout and cross-validation results.
+
+### Observed result
+
+In this run, random forest ranked highest on the holdout test split, while
+cross-validation showed random forest and gradient boosting were very close,
+with a slight edge to gradient boosting on mean CV metrics.
+
 ## Example Notebook + Your Notebook
 
 Keep the example notebook as it is.
