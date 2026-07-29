@@ -39,6 +39,43 @@ In this run, random forest ranked highest on the holdout test split, while
 cross-validation showed random forest and gradient boosting were very close,
 with a slight edge to gradient boosting on mean CV metrics.
 
+## Phase 5 Custom Project Summary
+
+For Phase 5, I applied the same ensemble workflow to a harder target in the
+penguins dataset: `sex` (binary classification).
+
+### What changed in Phase 5
+
+- Switched target from `species` to `sex`
+- Added random forest tuning grid:
+	- `n_estimators`: 100, 200, 400
+	- `max_depth`: 3, 6, None
+- Added extra diagnostics:
+	- tuning heatmap
+	- confusion matrix
+	- CV stability chart
+	- ROC curve and Precision-Recall curve
+
+### Key Phase 5 results
+
+- Best tuned model on holdout: `rf_100_depth_6`
+- Holdout accuracy:
+	- `rf_100_depth_6`: 0.8955
+	- `gradient_boosting`: 0.8806
+	- `single_tree`: 0.8358
+- Cross-validation (accuracy mean):
+	- `rf_100_depth_6`: 0.8953
+	- `gradient_boosting`: 0.8952
+	- `single_tree`: 0.8891
+- ROC AUC:
+	- `rf_100_depth_6`: 0.9323
+	- `gradient_boosting`: 0.9251
+	- `single_tree`: 0.8324
+
+This project demonstrates that ensembles remain stronger than the single-tree
+baseline on the harder target, with tuned random forest chosen as the best
+overall model for this run.
+
 ## Example Notebook + Your Notebook
 
 Keep the example notebook as it is.
