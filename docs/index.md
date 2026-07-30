@@ -152,5 +152,4 @@ Skills demonstrated:
 This workflow applies directly to real binary classification problems where
 tradeoffs between error types and model stability matter.
 
-Include at least one screenshot from the Phase 5 outputs in your docs/images
-folder and reference it here for submission.
+![Phase 5 outputs screenshot](./images/phase1_5_results_screenshot.png)
