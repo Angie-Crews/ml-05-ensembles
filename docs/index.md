@@ -152,4 +152,4 @@ Skills demonstrated:
 This workflow applies directly to real binary classification problems where
 tradeoffs between error types and model stability matter.
 
-![Phase 5 outputs screenshot](./images/phase1_5_results_screenshot.png)
+![Phase 5 outputs screenshot](./images/ml_05_ensembles_RF_Tuning%20Heatmap.png)
