@@ -123,6 +123,10 @@ Notebook used:
 - Confusion matrix (rf_100_depth_6 on test set):
 	- Female correctly classified: 28 of 33
 	- Male correctly classified: 32 of 34
+- Feature importance interpretation:
+	- `bill_depth_mm` and `body_mass_g` were the most important predictors of
+	  penguin sex in the random forest chart.
+	- `bill_length_mm` and `flipper_length_mm` contributed less.
 - Interpretation:
 	- ensembles clearly outperformed the single tree on this harder target.
 	- tuned random forest is the best overall production candidate for this run.

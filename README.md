@@ -76,6 +76,10 @@ This project demonstrates that ensembles remain stronger than the single-tree
 baseline on the harder target, with tuned random forest chosen as the best
 overall model for this run.
 
+The feature-importance chart also showed that bill_depth_mm and body_mass_g
+were the most important predictors of penguin sex, which makes the results
+easier to interpret for readers without a machine learning background.
+
 ## Example Notebook + Your Notebook
 
 Keep the example notebook as it is.
